@@ -53,6 +53,14 @@ The complete document, including technical references and the **RFP Engine Refer
 
 ---
 
+## 🛠️ Awesome MAS Tools
+
+Looking for frameworks that comply with MAS principles? Check out our curated list:
+
+👉 **[Awesome Microagentic Stacking](./AWESOME.md)**
+
+---
+
 ## 🤝 Contributing
 
 This is a living standard. We welcome contributions from the AI engineering community.

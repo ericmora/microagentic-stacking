@@ -26,7 +26,7 @@ The "RFP Engine" (Point 7) is just the beginning. We want to document more real-
 
 If you have built a tool that facilitates MAS implementation or written an article about it:
 
-- Add it to the "MAS-Ready Resources" list in the README via a PR.
+- Add it to the **[Awesome MAS List](./AWESOME.md)** via a PR.
 
 ---
 
