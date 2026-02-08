@@ -109,6 +109,32 @@ Quebramos o gargalo do desenvolvimento. Graças aos contratos estritos e caixas 
 
 Para demonstrar a robustez do Microagentic Stacking num ambiente crítico, analisamos a arquitetura lógica de um sistema de Resposta Automática a Licitações (RFPs). Este processo requer uma estrita separação entre o raciocínio (IA) e os dados de negócio (SQL). A indústria move-se para modelos onde a orquestração se gere mediante máquinas de estado explícitas, não mediante loops autónomos [9].
 
+```mermaid
+graph TD
+    subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
+        Start((Start RFP)) --> Step1[Call Agent A: Extractor]
+        Step1 --> Validation1{Contract Check}
+        Validation1 -->|Success| Legacy[Query ERP: Prices & Stock]
+        Validation1 -->|Fail| Error1[HALT: Contract Violation]
+        Legacy --> Step2[Call Agent B: Risk Auditor]
+        Step2 --> Validation2{Circuit Breaker?}
+        Validation2 -->|Risk High| Error2[HALT: Risk Detected]
+        Validation2 -->|Risk Low| Step3[Call Agent C: Final Drafter]
+        Step3 --> Final((Final Proposal))
+    end
+    subgraph Agents [ATOMIC MICROAGENTS]
+        AgentA[[Agent A: Extractor]]
+        AgentB[[Agent B: Auditor]]
+        AgentC[[Agent C: Drafter]]
+    end
+    Step1 -.-> AgentA
+    Step2 -.-> AgentB
+    Step3 -.-> AgentC
+    style Orchestrator fill:#f0f4f8,stroke:#2d3748
+    style Error1 fill:#feb2b2
+    style Error2 fill:#feb2b2
+```
+
 ### A Pilha Microagêntica (The Stack)
 
 * **Orquestrador (State Machine):** O núcleo do sistema. Não é IA. É um motor de fluxo de trabalho que gere o estado da licitação e dirige o tráfego entre agentes e bases de dados.

@@ -110,6 +110,8 @@ We break the development bottleneck. Thanks to strict contracts and black boxes,
 
 ## 7. Reference Architecture: The RFP Engine
 
+To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops [9].
+
 ```mermaid
 graph TD
     subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
@@ -135,8 +137,6 @@ graph TD
     style Error1 fill:#feb2b2
     style Error2 fill:#feb2b2
 ```
-
-To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops [9].
 
 ### The Microagentic Stack
 

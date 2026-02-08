@@ -108,6 +108,8 @@ Rompiamo il collo di bottiglia dello sviluppo. Grazie a contratti rigorosi e sca
 
 ## 7. Architettura di Riferimento: Il Motore RFP
 
+Per dimostrare la robustezza del Microagentic Stacking in un ambiente critico, analizziamo l'architettura logica di un sistema di risposta automatica alle richieste di proposta (RFP). Questo processo richiede una rigorosa separazione tra ragionamento (IA) e dati aziendali (SQL). L'industria si sta muovendo verso modelli in cui l'orchestrazione è gestita da macchine a stati esplicite, non da loop autonomi [9].
+
 ```mermaid
 graph TD
     subgraph Orchestrator [ORCHESTRATORE DI PROCESSI AZIENDALI]
@@ -133,8 +135,6 @@ graph TD
     style Error1 fill:#feb2b2
     style Error2 fill:#feb2b2
 ```
-
-Per dimostrare la robustezza del Microagentic Stacking in un ambiente critico, analizziamo l'architettura logica di un sistema di risposta automatica alle richieste di proposta (RFP). Questo processo richiede una rigorosa separazione tra ragionamento (IA) e dati aziendali (SQL). L'industria si sta muovendo verso modelli in cui l'orchestrazione è gestita da macchine a stati esplicite, non da loop autonomi [9].
 
 ### Lo Stack Microagentico
 

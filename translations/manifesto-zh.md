@@ -109,6 +109,32 @@ AI不是魔法，它是概率计算。因此，它必须服从于几十年来让
 
 为了展示微智能体堆叠在关键环境中的稳健性，我们分析了一个自动招标书（RFP）响应系统的逻辑架构。该过程需要推理（AI）和业务数据（SQL）之间的严格分离。行业正向由显式状态机而非自主循环管理编排的模型转变 [9]。
 
+```mermaid
+graph TD
+    subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
+        Start((Start RFP)) --> Step1[Call Agent A: Extractor]
+        Step1 --> Validation1{Contract Check}
+        Validation1 -->|Success| Legacy[Query ERP: Prices & Stock]
+        Validation1 -->|Fail| Error1[HALT: Contract Violation]
+        Legacy --> Step2[Call Agent B: Risk Auditor]
+        Step2 --> Validation2{Circuit Breaker?}
+        Validation2 -->|Risk High| Error2[HALT: Risk Detected]
+        Validation2 -->|Risk Low| Step3[Call Agent C: Final Drafter]
+        Step3 --> Final((Final Proposal))
+    end
+    subgraph Agents [ATOMIC MICROAGENTS]
+        AgentA[[Agent A: Extractor]]
+        AgentB[[Agent B: Auditor]]
+        AgentC[[Agent C: Drafter]]
+    end
+    Step1 -.-> AgentA
+    Step2 -.-> AgentB
+    Step3 -.-> AgentC
+    style Orchestrator fill:#f0f4f8,stroke:#2d3748
+    style Error1 fill:#feb2b2
+    style Error2 fill:#feb2b2
+```
+
 ### 微智能体堆栈
 
 * **编排器（状态机）：** 系统的核心。它不是AI。它是一个工作流引擎，管理招标状态并指导智能体和数据库之间的流量。

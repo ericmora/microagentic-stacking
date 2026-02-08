@@ -109,6 +109,8 @@ Wir brechen den Entwicklungsflaschenhals. Dank strikter Verträge und Black Boxe
 
 ## 7. Referenzarchitektur: Die RFP-Engine
 
+Um die Robustheit von Microagentic Stacking in einer kritischen Umgebung zu demonstrieren, analysieren wir die logische Architektur eines automatisierten Request for Proposal (RFP) Response Systems. Dieser Prozess erfordert eine strikte Trennung zwischen logischem Denken (KI) und Geschäftsdaten (SQL). Die Industrie bewegt sich hin zu Modellen, bei denen die Orchestrierung durch explizite Zustandsmaschinen und nicht durch autonome Schleifen verwaltet wird [9].
+
 ```mermaid
 graph TD
     subgraph Orchestrator [GESCHÄFTSPROZESS-ORCHESTRATOR]
@@ -134,8 +136,6 @@ graph TD
     style Error1 fill:#feb2b2
     style Error2 fill:#feb2b2
 ```
-
-Um die Robustheit von Microagentic Stacking in einer kritischen Umgebung zu demonstrieren, analysieren wir die logische Architektur eines automatisierten Request for Proposal (RFP) Response Systems. Dieser Prozess erfordert eine strikte Trennung zwischen logischem Denken (KI) und Geschäftsdaten (SQL). Die Industrie bewegt sich hin zu Modellen, bei denen die Orchestrierung durch explizite Zustandsmaschinen und nicht durch autonome Schleifen verwaltet wird [9].
 
 ### Der mikroagentische Stack
 
