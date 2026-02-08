@@ -9,7 +9,6 @@ A curated list of tools, frameworks, and resources that align with the **[Microa
 > 3. **Explicit Orchestration** (Graphs, State Machines, DAGs)
 > 4. **Observability** (Tracing, Evals, Replayability)
 
-
 ## 🏗️ Orchestration Frameworks (The "How")
 
 These tools allow you to build deterministic workflows and manage state between agents, avoiding "infinite loops of doom."
@@ -44,11 +43,9 @@ Tools that provide pre-built agents or runtimes, but **MUST** be used with archi
 * **[Microsoft AutoGen](https://github.com/microsoft/autogen)** - Multi-agent conversation framework. *MAS Note: Use for "group chat" sub-processes where strict determinism is less critical, or use their new graph features.*
 * **[Semantic Kernel](https://github.com/microsoft/semantic-kernel)** - Microsoft's SDK. Very strong on "Plugins" (Skills) which function as atomic units. Good for binding code to agents.
 
-
 ## 📚 Educational Resources
 
 * **[The Shift from Models to Compound AI Systems](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/)** - Berkeley AI Research (BAIR). The academic backing for Point 1.
 * **[Building Microservices](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/)** by Sam Newman. Required reading for understanding *why* we separate concerns.
-
 
 **[⬆️ Back to Manifesto](./MANIFESTO.md)**

@@ -6,9 +6,9 @@
 
 We are witnessing the collapse of "Prompt Engineering" as an isolated discipline. The attempt to solve complex business processes through a single giant instruction to a foundational model (LLM) has proven to be a fragile, unpredictable strategy, and impossible to audit at enterprise scale.
 
-Academic research confirmed as early as 2023 that treating LLMs as monolithic black boxes for complex tasks was a dead end [7]. Today, leading institutions like UC Berkeley ratify that the state of the art is no longer achieved with larger individual models, but with "Compound AI Systems" that orchestrate multiple components [13], a trend validated by emerging architectural patterns observed in the industry by leading firms like a16z [15].
+Academic research confirmed as early as 2023 that treating LLMs as monolithic black boxes for complex tasks was a dead end [7]. Today, leading institutions like UC Berkeley ratify that the state of the art is no longer achieved with larger individual models, but with **"Compound AI Systems"** that orchestrate multiple components [13], a trend validated by emerging architectural patterns observed in the industry by leading firms like a16z [15].
 
-AI is not magic; it is probabilistic computation. As such, it must undergo the same engineering disciplines that have allowed software to scale for decades: decoupling, modularity, and strict contracts. The future of AI lies not in larger prompts, but in better system architecture [10].
+AI is not magic; it is probabilistic computation. As such, it must undergo the same engineering disciplines that have allowed software to scale for decades: **decoupling, modularity, and strict contracts.** The future of AI lies not in larger prompts, but in better system architecture [10].
 
 We propose a radical paradigm shift: stop building monolithic chatbots and start orchestrating compound architectures.
 
@@ -22,7 +22,7 @@ We are based on three non-negotiable pillars:
 
 1. **Process Over AI:** The AI does not define the workflow; the business process defines where and how AI is used.
 2. **Atomicity Over Generality:** Cognitive complexity is solved by breaking it down into its smallest and indivisible components.
-3. **Incremental Growth:** Systems are not designed "finished"; they evolve layer by layer, process by process, from a simple MVP to a complex ecosystem.
+3. **Incremental Growth:** Systems are not designed "finished"; they evolve layer by layer, from a simple MVP to a complex ecosystem.
 
 ## 3. The Technical Principles of MAS
 
@@ -54,6 +54,35 @@ Agents are the pieces, but the value is in the assembly. Complex intelligence do
 
 * **Processes calling Agents:** A workflow orchestrates a sequence of microagents.
 * **Processes calling Processes:** A high-level process can invoke another process as if it were just another agent, allowing for infinite recursive composition.
+* **Human-in-the-Loop (HITL):** A human validator can act as a "Microagent" within the stack, fulfilling a contract where manual oversight is required.
+
+## 4. Architecture Reference: The RFP Engine
+
+```mermaid
+graph TD
+    subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
+        Start((Start RFP)) --> Step1[Call Agent A: Extractor]
+        Step1 --> Validation1{Contract Check}
+        Validation1 -->|Success| Legacy[Query ERP: Prices & Stock]
+        Validation1 -->|Fail| Error1[HALT: Contract Violation]
+        Legacy --> Step2[Call Agent B: Risk Auditor]
+        Step2 --> Validation2{Circuit Breaker?}
+        Validation2 -->|Risk High| Error2[HALT: Risk Detected]
+        Validation2 -->|Risk Low| Step3[Call Agent C: Final Drafter]
+        Step3 --> Final((Final Proposal))
+    end
+    subgraph Agents [ATOMIC MICROAGENTS]
+        AgentA[[Agent A: Extractor]]
+        AgentB[[Agent B: Auditor]]
+        AgentC[[Agent C: Drafter]]
+    end
+    Step1 -.-> AgentA
+    Step2 -.-> AgentB
+    Step3 -.-> AgentC
+    style Orchestrator fill:#f0f4f8,stroke:#2d3748
+    style Error1 fill:#feb2b2
+    style Error2 fill:#feb2b2
+```
 
 ## 4. The Enterprise Governance Agreement
 
