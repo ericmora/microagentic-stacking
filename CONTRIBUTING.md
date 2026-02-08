@@ -43,6 +43,6 @@ We value rigorous technical debate that is constructive and respectful. Our comm
 
 ---
 
-**By contributing, you agree that your contributions will be licensed under the same [CC BY 4.0](./LICENSE) license as the rest of the project.**
+**By contributing, you agree that your contributions will be licensed under the same [CC BY 4.0](./LICENSE.md) license as the rest of the project.**
 
 Let's turn AI into a solid engineering discipline!

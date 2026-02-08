@@ -57,15 +57,13 @@ The complete document, including technical references and the **RFP Engine Refer
 
 This is a living standard. We welcome contributions from the AI engineering community.
 
-1. Fork the repo.
-2. Propose changes via Pull Request.
-3. Discuss in the Issues section.
+👉 **Please read our [Contribution Guidelines](./CONTRIBUTING.md) before submitting a Pull Request.**
 
 ---
 
 ## 📄 License
 
-This manifesto is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+This manifesto is licensed under the **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE.md)**.
 
 **Author:** Eric Mora  
 **Published:** January 2026
