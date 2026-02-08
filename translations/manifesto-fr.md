@@ -4,7 +4,6 @@
 
 ## De l'Alchimie des Prompts à l'Ingénierie Logicielle Évolutive
 
-
 ## 1. Préambule : La Fin du Monolithe
 
 Nous assistons à l'effondrement du "Prompt Engineering" en tant que discipline isolée. La tentative de résoudre des processus d'affaires complexes via une instruction unique géante à un modèle fondationnel (LLM) s'est avérée être une stratégie fragile, imprévisible et impossible à auditer à l'échelle de l'entreprise.
@@ -17,7 +16,6 @@ Nous proposons un changement de paradigme radical : cesser de construire des cha
 
 Nous appelons ce standard **Microagentic Stacking (MAS)**.
 
-
 ## 2. Philosophie Centrale
 
 Notre méthodologie ne cherche pas à créer une Intelligence Artificielle Générale (AGI). Elle cherche à construire des systèmes d'entreprise robustes via l'orchestration d'unités cognitives spécialisées.
@@ -27,7 +25,6 @@ Nous nous basons sur trois piliers non négociables :
 1. **Le Processus Prime :** L'IA ne définit pas le flux de travail ; le processus métier définit où et comment l'IA est utilisée.
 2. **Atomicité sur Généralité :** La complexité cognitive est résolue en la divisant en ses plus petits composants indivisibles.
 3. **Croissance Incrémentale :** Les systèmes ne sont pas conçus "finis" ; ils évoluent couche par couche, processus par processus, d'un MVP simple à un écosystème complexe.
-
 
 ## 3. Les Principes Techniques du MAS
 
@@ -60,7 +57,6 @@ Les agents sont les pièces, mais la valeur est dans l'assemblage. L'intelligenc
 * **Processus appelant des Agents :** Un flux de travail orchestre une séquence de microagents.
 * **Processus appelant des Processus :** Un processus de haut niveau peut invoquer un autre processus comme s'il s'agissait d'un simple agent, permettant une composition récursive infinie.
 
-
 ## 4. L'Accord de Gouvernance d'Entreprise
 
 L'autonomie de l'IA au sein d'une entreprise nécessite un contrôle strict. MAS n'est pas juste du code ; c'est un cadre de responsabilité et de robustesse. Des experts en ingénierie de ML ont souligné à plusieurs reprises que le fossé entre une démo et un système en production réside dans le manque de rigueur d'ingénierie, d'évaluation et de contrôle des risques [14]. Les preuves montrent que la robustesse diminue considérablement à mesure que l'autonomie incontrôlée augmente [8].
@@ -71,7 +67,7 @@ L'erreur "système" n'existe pas. Chaque output généré doit porter une signat
 
 ### 2. Immutabilité et Versionning (Prompt SemVer)
 
-Un prompt est du code. Il doit être sous contrôle de version. Tout changement dans une instruction interne, aussi minime soit-il, constitue une nouvelle version immuable de l'agent (v1.0 -> v1.1). Il n'y a pas de changements "à chaud" en production.
+Un prompt est du code. Il doit être sous contrôle de version. Tout changement dans une instruction interne, aussi minime soit-il, constitue une nouvelle version immuable de l'agent (par ex., v1.0.0 pour des ajustements mineurs du texte, v2.0.0 pour un changement de modèle ou de logique). Il n'y a pas de changements "à chaud" en production.
 
 ### 3. Validation Stricte à l'Entrée (Fail Fast)
 
@@ -85,7 +81,6 @@ L'information est régie par le principe du "besoin de savoir". Aucun agent ne r
 
 Le coût doit être observable par unité. Le système doit être capable de rapporter le coût exact d'exécution de chaque microagent individuel.
 
-
 ## 5. Le Cadre de Qualité (Testing Framework)
 
 Comme les LLMs sont probabilistes, les tests en MAS doivent être statistiques et multiniveaux.
@@ -93,7 +88,6 @@ Comme les LLMs sont probabilistes, les tests en MAS doivent être statistiques e
 * **Niveau 1 : Évaluations Unitaires (Unit Evals).** Chaque Microagent doit réussir un "Golden Dataset" avec un seuil de succès statistique défini (>95%) avant d'être déployé.
 * **Niveau 2 : Test de Contrat (Integration).** Nous validons que les pièces s'emboîtent via le Mocking. Nous assurons que l'orchestrateur transforme correctement les données entre agents sans avoir besoin d'exécuter les modèles.
 * **Niveau 3 : Test de Processus (E2E).** Nous validons que le flux métier complet répond aux exigences fonctionnelles et de latence.
-
 
 ## 6. Les Trois Dimensions de l'Évolutivité
 
@@ -111,7 +105,6 @@ Nous évitons la détérioration cognitive des contextes longs [6]. Pour résoud
 
 Nous brisons le goulot d'étranglement du développement. Grâce aux contrats stricts et aux boîtes noires, plusieurs équipes peuvent travailler, optimiser et déployer différents microagents en parallèle sans conflits de code et sans arrêter l'écosystème.
 
-
 ## 7. Architecture de Référence : Le Moteur d'Appels d'Offres (RFP Engine)
 
 Pour démontrer la robustesse du Microagentic Stacking dans un environnement critique, nous analysons l'architecture logique d'un système de Réponse Automatique aux Appels d'Offres (RFP). Ce processus nécessite une séparation stricte entre le raisonnement (IA) et les données métier (SQL). L'industrie s'oriente vers des modèles où l'orchestration est gérée par des machines d'état explicites, et non par des boucles autonomes [9].
@@ -124,7 +117,6 @@ Pour démontrer la robustesse du Microagentic Stacking dans un environnement cri
 * **Microagent B (Auditeur de Risque) :** Reçoit les clauses légales. S'il détecte des risques inacceptables, il active un "Coupe-Circuit" (Circuit Breaker) [5] et l'orchestrateur arrête le processus avant la rédaction.
 * **Microagent C (Rédacteur Final) :** Ne s'active que si les étapes précédentes sont valides. Génère la proposition en utilisant exclusivement les "données propres" que l'orchestrateur lui fournit.
 
-
 ## 8. Conclusion : L'Évolution comme Standard
 
 Microagentic Stacking n'est pas une solution statique ; c'est une méthodologie pour la croissance continue. Elle permet de commencer avec un MVP simple et d'évoluer vers des écosystèmes complexes, en ajoutant des capacités et en optimisant des composants individuels sans risque de régression. La communauté de développement en général adopte cette transition des monolithes vers des workflows agentiques comme le nouveau paradigme de migration des charges de travail [12].
@@ -135,7 +127,7 @@ Nous rejetons le chaos. Nous embrassons la structure.
 **Auteur Principal & Mainteneur :** Eric Mora Juan (<ericmora82@gmail.com>)
 **Publié :** Janvier 2026
 Ceci est un standard vivant. Les contributions de la communauté sont les bienvenues.
-
+Adoptez cette norme en ajoutant le badge MAS-Ready à votre dépôt.
 
 ## Références
 

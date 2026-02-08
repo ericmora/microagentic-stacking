@@ -4,7 +4,6 @@
 
 ## Da Alquimia dos Prompts à Engenharia de Software Escalável
 
-
 ## 1. Preâmbulo: O Fim do Monólito
 
 Estamos a assistir ao colapso do "Prompt Engineering" como disciplina isolada. A tentativa de resolver processos de negócio complexos através de uma única instrução gigante a um modelo fundacional (LLM) provou ser uma estratégia frágil, imprevisível e impossível de auditar à escala empresarial.
@@ -17,7 +16,6 @@ Propomos uma mudança de paradigma radical: deixar de construir chatbots monolí
 
 A este padrão chamamos **Microagentic Stacking (MAS)**.
 
-
 ## 2. Filosofia Central
 
 A nossa metodologia não procura criar uma Inteligência Artificial Geral (AGI). Procura construir sistemas empresariais robustos através da orquestração de unidades cognitivas especializadas.
@@ -27,7 +25,6 @@ Baseamo-nos em três pilares inegociáveis:
 1. **O Processo Manda:** A IA não define o fluxo de trabalho; o processo de negócio define onde e como a IA é utilizada.
 2. **Atomicidade sobre Generalidade:** A complexidade cognitiva resolve-se dividindo-a nos seus componentes mais pequenos e indivisíveis.
 3. **Crescimento Incremental:** Os sistemas não se desenham "finalizados"; evoluem camada a camada, processo a processo, desde um MVP simples até um ecossistema complexo.
-
 
 ## 3. Os Princípios Técnicos do MAS
 
@@ -60,7 +57,6 @@ Os agentes são as peças, mas o valor está na montagem. A inteligência comple
 * **Processos que chamam Agentes:** Um fluxo de trabalho orquestra uma sequência de microagentes.
 * **Processos que chamam Processos:** Um processo de alto nível pode invocar outro processo como se fosse apenas mais um agente, permitindo uma composição recursiva infinita.
 
-
 ## 4. O Acordo de Governança Empresarial
 
 A autonomia da IA dentro de uma empresa requer um controlo estrito. MAS não é apenas código; é um quadro de responsabilidade e robustez. Especialistas em engenharia de ML assinalaram reiteradamente que a brecha entre uma demo e um sistema em produção reside na falta de rigor de engenharia, avaliação e controlo de riscos [14]. A evidência mostra que a robustez diminui drasticamente à medida que aumenta a autonomia não controlada [8].
@@ -71,7 +67,7 @@ O erro "de sistema" não existe. Cada output gerado deve carregar uma assinatura
 
 ### 2. Imutabilidade e Versionamento (Prompt SemVer)
 
-Um prompt é código. Deve estar sob controle de versão. Qualquer mudança numa instrução interna, por menor que seja, constitui uma nova versão imutável do agente (v1.0 -> v1.1). Não existem mudanças "a quente" em produção.
+Um prompt é código. Deve estar sob controle de versão. Qualquer mudança numa instrução interna, por menor que seja, constitui uma nova versão imutável do agente (p. ex., v1.0.0 para ajustes menores de texto, v2.0.0 para troca de modelo ou mudanças de lógica). Não existem mudanças "a quente" em produção.
 
 ### 3. Validação Estrita na Entrada (Fail Fast)
 
@@ -85,7 +81,6 @@ A informação rege-se pelo princípio de "necessidade de saber". Nenhum agente 
 
 O custo deve ser observável por unidade. O sistema deve ser capaz de reportar o custo exato de execução de cada microagente individual.
 
-
 ## 5. O Quadro de Qualidade (Testing Framework)
 
 Dado que os LLMs são probabilísticos, o testing em MAS deve ser estatístico e multinível.
@@ -93,7 +88,6 @@ Dado que os LLMs são probabilísticos, o testing em MAS deve ser estatístico e
 * **Nível 1: Avaliações Unitárias (Unit Evals).** Cada Microagente deve superar um "Golden Dataset" com um limiar de sucesso estatístico definido (>95%) antes de ser implantado.
 * **Nível 2: Testing de Contrato (Integration).** Validamos que as peças encaixam mediante Mocking. Asseguramos que o orquestrador está a transformar corretamente os dados entre agentes sem necessidade de executar os modelos.
 * **Nível 3: Testing de Processo (E2E).** Validamos que o fluxo de negócio completo cumpre com os requisitos funcionais e de latência.
-
 
 ## 6. As Três Dimensões da Escalabilidade
 
@@ -111,7 +105,6 @@ Evitamos a deterioração cognitiva dos contextos longos [6]. Para resolver prob
 
 Quebramos o gargalo do desenvolvimento. Graças aos contratos estritos e caixas negras, múltiplas equipas podem trabalhar, otimizar e implantar diferentes microagentes em paralelo sem conflitos de código e sem parar o ecossistema.
 
-
 ## 7. Arquitetura de Referência: O Motor de Licitações (RFP Engine)
 
 Para demonstrar a robustez do Microagentic Stacking num ambiente crítico, analisamos a arquitetura lógica de um sistema de Resposta Automática a Licitações (RFPs). Este processo requer uma estrita separação entre o raciocínio (IA) e os dados de negócio (SQL). A indústria move-se para modelos onde a orquestração se gere mediante máquinas de estado explícitas, não mediante loops autónomos [9].
@@ -124,7 +117,6 @@ Para demonstrar a robustez do Microagentic Stacking num ambiente crítico, anali
 * **Microagente B (Auditor de Risco):** Recebe as cláusulas legais. Se deteta riscos inaceitáveis, ativa um "Disjuntor" (Circuit Breaker) [5] e o orquestrador para o processo antes da redação.
 * **Microagente C (Redator Final):** Apenas se ativa se os passos anteriores forem válidos. Gera a proposta utilizando exclusivamente os "dados limpos" que o orquestrador lhe proporciona.
 
-
 ## 8. Conclusão: A Evolução como Padrão
 
 Microagentic Stacking não é uma solução estática; é uma metodologia para o crescimento contínuo. Permite começar com um MVP simples e evoluir para ecossistemas complexos, adicionando capacidades e otimizando componentes individuais sem risco de regressão. A comunidade de desenvolvimento em geral está a adotar esta transição desde monólitos para fluxos de trabalho agênticos como o novo paradigma de migração de cargas de trabalho [12].
@@ -135,7 +127,7 @@ Rejeitamos o caos. Abraçamos a estrutura.
 **Autor Principal & Mantenedor:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Publicado:** Janeiro 2026
 Este é um padrão vivo. As contribuições da comunidade são bem-vindas.
-
+Adote este padrão adicionando o selo MAS-Ready ao seu repositório.
 
 ## Referências
 

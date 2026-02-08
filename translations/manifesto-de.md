@@ -4,7 +4,6 @@
 
 ## Von Prompt-Alchemie zu skalierbarem Software-Engineering
 
-
 ## 1. Präambel: Das Ende des Monolithen
 
 Wir erleben den Zusammenbruch des „Prompt Engineering“ als isolierte Disziplin. Der Versuch, komplexe Geschäftsprozesse durch eine einzige riesige Anweisung an ein Basismodell (LLM) zu lösen, hat sich als fragile, unvorhersehbare Strategie erwiesen, die im Unternehmensmaßstab unmöglich zu prüfen ist.
@@ -17,7 +16,6 @@ Wir schlagen einen radikalen Paradigmenwechsel vor: Hören Sie auf, monolithisch
 
 Wir nennen diesen Standard **Microagentic Stacking (MAS)**.
 
-
 ## 2. Kernphilosophie
 
 Unsere Methodik zielt nicht darauf ab, künstliche allgemeine Intelligenz (AGI) zu schaffen. Sie zielt darauf ab, robuste Unternehmenssysteme durch die Orchestrierung spezialisierter kognitiver Einheiten aufzubauen.
@@ -27,7 +25,6 @@ Wir basieren auf drei nicht verhandelbaren Säulen:
 1. **Prozess über KI:** Die KI definiert nicht den Workflow; der Geschäftsprozess definiert, wo und wie KI eingesetzt wird.
 2. **Atomarität über Allgemeinheit:** Kognitive Komplexität wird gelöst, indem sie in ihre kleinsten und unteilbaren Komponenten zerlegt wird.
 3. **Inkrementelles Wachstum:** Systeme werden nicht „fertig“ entworfen; sie entwickeln sich Schicht für Schicht, Prozess für Prozess, von einem einfachen MVP zu einem komplexen Ökosystem.
-
 
 ## 3. Die technischen Prinzipien von MAS
 
@@ -60,6 +57,9 @@ Agenten sind die Teile, aber der Wert liegt in der Montage. Komplexe Intelligenz
 * **Prozesse, die Agenten aufrufen:** Ein Workflow orchestriert eine Sequenz von Mikroagenten.
 * **Prozesse, die Prozesse aufrufen:** Ein High-Level-Prozess kann einen anderen Prozess aufrufen, als wäre er nur ein weiterer Agent, was eine unendliche rekursive Komposition ermöglicht.
 
+### V. Das Gesetz der Geschäftsprozess-Orchestrierung (BPO)
+
+Der Orchestrator ist der Meister des Prozesses. Er ist die einzige Komponente, die den gesamten Kontext der Operation kennt. Er ist die einzige Komponente, die Entscheidungen auf der Grundlage des vollständigen Kontexts der Operation treffen kann.
 
 ## 4. Die Enterprise-Governance-Vereinbarung
 
@@ -69,7 +69,7 @@ KI-Autonomie innerhalb eines Unternehmens erfordert strikte Kontrolle. MAS ist n
 
 ### 2. Unveränderlichkeit und Versionierung (Prompt SemVer)
 
-Ein Prompt ist Code. Er muss unter Versionskontrolle stehen. Jede Änderung an einer internen Anweisung, so klein sie auch sein mag, stellt eine neue unveränderliche Version des Agenten dar (v1.0 -> v1.1). Es gibt keine "heißen" Änderungen in der Produktion.
+Ein Prompt ist Code. Er muss unter Versionskontrolle stehen. Jede Änderung an einer internen Anweisung, so klein sie auch sein mag, stellt eine neue unveränderliche Version des Agenten dar (z. B. v1.0.0 für kleinere Textanpassungen, v2.0.0 für Modellwechsel oder Logikänderungen). Es gibt keine "heißen" Änderungen in der Produktion.
 
 ### 3. Strikte Eingabevalidierung (Fail Fast)
 
@@ -83,7 +83,6 @@ Informationen unterliegen dem Prinzip „Need to know“. Kein Agent erhält den
 
 Kosten müssen pro Einheit beobachtbar sein. Das System muss in der Lage sein, die genauen Ausführungskosten jedes einzelnen Mikroagenten zu melden.
 
-
 ## 5. Das Qualitätsrahmenwerk (Testing Framework)
 
 Da LLMs probabilistisch sind, muss das Testen in MAS statistisch und mehrstufig sein.
@@ -91,7 +90,6 @@ Da LLMs probabilistisch sind, muss das Testen in MAS statistisch und mehrstufig 
 * **Level 1: Unit Evals.** Jeder Mikroagent muss einen „Golden Dataset“ mit einer definierten statistischen Erfolgsschwelle (>95 %) bestehen, bevor er bereitgestellt wird.
 * **Level 2: Vertragstests (Integration).** Wir validieren, dass die Teile mittels Mocking zusammenpassen. Wir stellen sicher, dass der Orchestrator Daten korrekt zwischen Agenten transformiert, ohne die Modelle ausführen zu müssen.
 * **Level 3: Prozesstests (E2E).** Wir validieren, dass der komplette Geschäftsablauf funktionale und Latenzanforderungen erfüllt.
-
 
 ## 6. Die drei Dimensionen der Skalierbarkeit
 
@@ -109,8 +107,33 @@ Wir vermeiden die kognitive Verschlechterung langer Kontexte [6]. Um komplexere 
 
 Wir brechen den Entwicklungsflaschenhals. Dank strikter Verträge und Black Boxes können mehrere Teams parallel an verschiedenen Mikroagenten arbeiten, diese optimieren und bereitstellen, ohne Codekonflikte und ohne das Ökosystem zu stoppen.
 
-
 ## 7. Referenzarchitektur: Die RFP-Engine
+
+```mermaid
+graph TD
+    subgraph Orchestrator [GESCHÄFTSPROZESS-ORCHESTRATOR]
+        Start((Start RFP)) --> Step1[Agent A aufrufen: Extraktor]
+        Step1 --> Validation1{Vertrag prüfen}
+        Validation1 -->|Erfolg| Legacy[ERP abfragen: Preise & Bestand]
+        Validation1 -->|Fehler| Error1[HALT: Vertragsverletzung]
+        Legacy --> Step2[Agent B aufrufen: Risikoauditor]
+        Step2 --> Validation2{Schutzschalter?}
+        Validation2 -->|Hohes Risiko| Error2[HALT: Risiko erkannt]
+        Validation2 -->|Geringes Risiko| Step3[Agent C aufrufen: Finaler Verfasser]
+        Step3 --> Final((Finaler Vorschlag))
+    end
+    subgraph Agents [ATOMARE MIKROAGENTEN]
+        AgentA[[Agent A: Extraktor]]
+        AgentB[[Agent B: Auditor]]
+        AgentC[[Agent C: Verfasser]]
+    end
+    Step1 -.-> AgentA
+    Step2 -.-> AgentB
+    Step3 -.-> AgentC
+    style Orchestrator fill:#f0f4f8,stroke:#2d3748
+    style Error1 fill:#feb2b2
+    style Error2 fill:#feb2b2
+```
 
 Um die Robustheit von Microagentic Stacking in einer kritischen Umgebung zu demonstrieren, analysieren wir die logische Architektur eines automatisierten Request for Proposal (RFP) Response Systems. Dieser Prozess erfordert eine strikte Trennung zwischen logischem Denken (KI) und Geschäftsdaten (SQL). Die Industrie bewegt sich hin zu Modellen, bei denen die Orchestrierung durch explizite Zustandsmaschinen und nicht durch autonome Schleifen verwaltet wird [9].
 
@@ -122,7 +145,6 @@ Um die Robustheit von Microagentic Stacking in einer kritischen Umgebung zu demo
 * **Mikroagent B (Risikoauditor):** Empfängt Rechtsklauseln. Wenn er inakzeptable Risiken erkennt, aktiviert er einen „Schutzschalter“ (Circuit Breaker) [5] und der Orchestrator stoppt den Prozess vor dem Entwurf.
 * **Mikroagent C (Finaler Verfasser):** Wird nur aktiviert, wenn vorherige Schritte gültig sind. Generiert den Vorschlag ausschließlich unter Verwendung der „sauberen Daten“, die der Orchestrator bereitstellt.
 
-
 ## 8. Fazit: Evolution als Standard
 
 Microagentic Stacking ist keine statische Lösung; es ist eine Methodik für kontinuierliches Wachstum. Es ermöglicht den Start mit einem einfachen MVP und die Entwicklung zu komplexen Ökosystemen, wobei Fähigkeiten hinzugefügt und einzelne Komponenten optimiert werden, ohne Risiko einer Regression. Die Entwicklungsgemeinschaft im Großen und Ganzen übernimmt diesen Übergang von Monolithen zu agentischen Workflows als neues Paradigma der Workload-Migration [12].
@@ -133,7 +155,7 @@ Wir lehnen Chaos ab. Wir begrüßen Struktur.
 **Hauptautor & Betreuer:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Veröffentlicht:** Januar 2026
 Dies ist ein lebendiger Standard. Beiträge der Community sind willkommen.
-
+Übernehmen Sie diesen Standard, indem Sie das MAS-Ready-Abzeichen zu Ihrem Repository hinzufügen.
 
 ## Referenzen
 

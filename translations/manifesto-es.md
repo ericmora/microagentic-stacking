@@ -4,7 +4,6 @@
 
 ## De la Alquimia de los Prompts a la Ingeniería de Software Escalable
 
-
 ## 1. Preámbulo: El Fin del Monolito
 
 Estamos presenciando el colapso del "Prompt Engineering" como disciplina aislada. El intento de resolver procesos de negocio complejos mediante una única instrucción gigante a un modelo fundacional (LLM) ha demostrado ser una estrategia frágil, impredecible e imposible de auditar a escala empresarial.
@@ -17,7 +16,6 @@ Proponemos un cambio de paradigma radical: dejar de construir chatbots monolíti
 
 A este estándar lo llamamos **Microagentic Stacking (MAS)**.
 
-
 ## 2. Filosofía Central
 
 Nuestra metodología no busca crear una Inteligencia Artificial General (AGI). Busca construir sistemas empresariales robustos mediante la orquestación de unidades cognitivas especializadas.
@@ -27,7 +25,6 @@ Nos basamos en tres pilares innegociables:
 1. **El Proceso Manda:** La IA no define el flujo de trabajo; el proceso de negocio define dónde y cómo se utiliza la IA.
 2. **Atomicidad sobre Generalidad:** La complejidad cognitiva se resuelve dividiéndola en sus componentes más pequeños e indivisibles.
 3. **Crecimiento Incremental:** Los sistemas no se diseñan "finalizados"; evolucionan capa a capa, proceso a proceso, desde un MVP simple hasta un ecosistema complejo.
-
 
 ## 3. Los Principios Técnicos del MAS
 
@@ -60,7 +57,6 @@ Los agentes son las piezas, pero el valor está en el ensamblaje. La inteligenci
 * **Procesos que llaman a Agentes:** Un flujo de trabajo orquesta una secuencia de microagentes.
 * **Procesos que llaman a Procesos:** Un proceso de alto nivel puede invocar a otro proceso como si fuera un agente más, permitiendo una composición recursiva infinita.
 
-
 ## 4. El Acuerdo de Gobernanza Empresarial
 
 La autonomía de la IA dentro de una empresa requiere un control estricto. MAS no es solo código; es un marco de responsabilidad y robustez. Expertos en ingeniería de ML han señalado reiteradamente que la brecha entre una demo y un sistema en producción reside en la falta de rigor de ingeniería, evaluación y control de riesgos [14]. La evidencia muestra que la robustez disminuye drásticamente a medida que aumenta la autonomía no controlada [8].
@@ -71,7 +67,7 @@ El error "del sistema" no existe. Cada output generado debe llevar una firma de 
 
 ### 2. Inmutabilidad y Versionado (Prompt SemVer)
 
-Un prompt es código. Debe estar bajo control de versiones. Cualquier cambio en una instrucción interna, por pequeño que sea, constituye una nueva versión inmutable del agente (v1.0 -> v1.1). No existen cambios "en caliente" en producción.
+Un prompt es código. Debe estar bajo control de versiones. Cualquier cambio en una instrucción interna, por pequeño que sea, constituye una nueva versión inmutable del agente (p. ej., v1.0.0 para ajustes menores de texto, v2.0.0 para cambio de modelo o lógica). No existen cambios "en caliente" en producción.
 
 ### 3. Validación Estricta en la Entrada (Fail Fast)
 
@@ -85,7 +81,6 @@ La información se rige por el principio de "necesidad de saber". Ningún agente
 
 El coste debe ser observable por unidad. El sistema debe ser capaz de reportar el coste exacto de ejecución de cada microagente individual.
 
-
 ## 5. El Marco de Calidad (Testing Framework)
 
 Dado que los LLMs son probabilísticos, el testing en MAS debe ser estadístico y multinivel.
@@ -93,7 +88,6 @@ Dado que los LLMs son probabilísticos, el testing en MAS debe ser estadístico 
 * **Nivel 1: Evaluaciones Unitarias (Unit Evals).** Cada Microagente debe superar un "Golden Dataset" con un umbral de éxito estadístico definido (>95%) antes de ser desplegado.
 * **Nivel 2: Testing de Contrato (Integration).** Validamos que las piezas encajen mediante Mocking. Aseguramos que el orquestador está transformando correctamente los datos entre agentes sin necesidad de ejecutar los modelos.
 * **Nivel 3: Testing de Proceso (E2E).** Validamos que el flujo de negocio completo cumple con los requisitos funcionales y de latencia.
-
 
 ## 6. Las Tres Dimensiones de la Escalabilidad
 
@@ -111,7 +105,6 @@ Evitamos el deterioro cognitivo de los contextos largos [6]. Para resolver probl
 
 Rompemos el cuello de botella del desarrollo. Gracias a los contratos estrictos y cajas negras, múltiples equipos pueden trabajar, optimizar y desplegar diferentes microagentes en paralelo sin conflictos de código y sin detener el ecosistema.
 
-
 ## 7. Arquitectura de Referencia: El Motor de Licitaciones (RFP Engine)
 
 Para demostrar la robustez del Microagentic Stacking en un entorno crítico, analizamos la arquitectura lógica de un sistema de Respuesta Automática a Licitaciones (RFPs). Este proceso requiere una estricta separación entre el razonamiento (IA) y los datos de negocio (SQL). La industria se mueve hacia modelos donde la orquestación se gestiona mediante máquinas de estado explícitas, no mediante bucles autónomos [9].
@@ -124,7 +117,6 @@ Para demostrar la robustez del Microagentic Stacking en un entorno crítico, ana
 * **Microagente B (Auditor de Riesgo):** Recibe las cláusulas legales. Si detecta riesgos inaceptables, activa un "Cortocircuito" (Circuit Breaker) [5] y el orquestador detiene el proceso antes de la redacción.
 * **Microagente C (Redactor Final):** Solo se activa si los pasos anteriores son válidos. Genera la propuesta utilizando exclusivamente los "datos limpios" que el orquestador le proporciona.
 
-
 ## 8. Conclusión: La Evolución como Estándar
 
 Microagentic Stacking no es una solución estática; es una metodología para el crecimiento continuo. Permite empezar con un MVP simple y evolucionar hacia ecosistemas complejos, añadiendo capacidades y optimizando componentes individuales sin riesgo de regresión. La comunidad de desarrollo en general está adoptando esta transición desde monolitos hacia flujos de trabajo agénticos como el nuevo paradigma de migración de cargas de trabajo [12].
@@ -135,7 +127,7 @@ Rechazamos el caos. Abrazamos la estructura.
 **Autor Principal & Mantenedor:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Publicado:** Enero 2026
 Este es un estándar vivo. Las contribuciones de la comunidad son bienvenidas.
-
+Adopta este estándar añadiendo la insignia MAS-Ready a tu repositorio.
 
 ## Referencias
 

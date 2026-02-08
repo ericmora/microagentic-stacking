@@ -4,7 +4,6 @@
 
 ## De l'Alquímia dels Prompts a l'Enginyeria de Software Escalable
 
-
 ## 1. Preàmbul: La Fi del Monòlit
 
 Estem presenciant el col·lapse del "Prompt Engineering" com a disciplina aïllada. L'intent de resoldre processos de negoci complexos mitjançant una única instrucció gegant a un model fundacional (LLM) ha demostrat ser una estratègia fràgil, imprevisible i impossible d'auditar a escala empresarial.
@@ -17,7 +16,6 @@ Proposem un canvi de paradigma radical: deixar de construir chatbots monolítics
 
 A aquest estàndard l'anomenem **Microagentic Stacking (MAS)**.
 
-
 ## 2. Filosofia Central
 
 La nostra metodologia no busca crear una Intel·ligència Artificial General (AGI). Busca construir sistemes empresarials robustos mitjançant l'orquestració d'unitats cognitives especialitzades.
@@ -27,7 +25,6 @@ Ens basem en tres pilars innegociables:
 1. **El Procés Mana:** La IA no defineix el flux de treball; el procés de negoci defineix on i com s'utilitza la IA.
 2. **Atomicitat sobre Generalitat:** La complexitat cognitiva es resol dividint-la en els seus components més petits i indivisibles.
 3. **Creixement Incremental:** Els sistemes no es dissenyen "finalitzats"; evolucionen capa a capa, procés a procés, des d'un MVP simple fins a un ecosistema complex.
-
 
 ## 3. Els Principis Tècnics del MAS
 
@@ -60,7 +57,6 @@ Els agents són les peces, però el valor està en l'assemblatge. La intel·lig�
 * **Processos que criden Agents:** Un flux de treball orquestra una seqüència de microagents.
 * **Processos que criden Processos:** Un procés d'alt nivell pot invocar un altre procés com si fos un agent més, permetent una composició recursiva infinita.
 
-
 ## 4. L'Acord de Governança Empresarial
 
 L'autonomia de la IA dins d'una empresa requereix un control estricte. MAS no és només codi; és un marc de responsabilitat i robustesa. Experts en enginyeria de ML han assenyalat reiteradament que la bretxa entre una demo i un sistema en producció resideix en la falta de rigor d'enginyeria, avaluació i control de riscos [14]. L'evidència mostra que la robustesa disminueix dràsticament a mesura que augmenta l'autonomia no controlada [8].
@@ -71,7 +67,7 @@ L'error "del sistema" no existeix. Cada output generat ha de portar una signatur
 
 ### 2. Immutabilitat i Versionat (Prompt SemVer)
 
-Un prompt és codi. Ha d'estar controlat per versions. Qualsevol canvi en una instrucció interna, per petit que sigui, constitueix una nova versió immutable de l'agent (v1.0 -> v1.1). No existeixen canvis "en calent" en producció.
+Un prompt és codi. Ha d'estar controlat per versions. Qualsevol canvi en una instrucció interna, per petit que sigui, constitueix una nova versió immutable de l'agent (p. ex., v1.0.0 per a ajustos menors de text, v2.0.0 per a canvi de model o lògica). No existeixen canvis "en calent" en producció.
 
 ### 3. Validació Estricta a l'Entrada (Fail Fast)
 
@@ -85,7 +81,6 @@ La informació es regeix pel principi de "necessitat de saber". Cap agent rep el
 
 El cost ha de ser observable per unitat. El sistema ha de ser capaç de reportar el cost exacte d'execució de cada microagent individual.
 
-
 ## 5. El Marc de Qualitat (Testing Framework)
 
 Atès que els LLMs són probabilístics, el testing en MAS ha de ser estadístic i multinivell.
@@ -93,7 +88,6 @@ Atès que els LLMs són probabilístics, el testing en MAS ha de ser estadístic
 * **Nivell 1: Avaluacions Unitàries (Unit Evals).** Cada Microagent ha de superar un "Golden Dataset" amb un llindar d'èxit estadístic definit (>95%) abans de ser desplegat.
 * **Nivell 2: Testing de Contracte (Integration).** Validem que les peces encaixin mitjançant Mocking. Assegurem que l'orquestrador està transformant correctament les dades entre agents sense necessitat d'executar els models.
 * **Nivell 3: Testing de Procés (E2E).** Validem que el flux de negoci complet compleix amb els requisits funcionals i de latència.
-
 
 ## 6. Les Tres Dimensions de l'Escalabilitat
 
@@ -111,7 +105,6 @@ Evitem el deteriorament cognitiu dels contextos llargs [6]. Per resoldre problem
 
 Trenquem el coll d'ampolla del desenvolupament. Gràcies als contractes estrictes i caixes negres, múltiples equips poden treballar, optimitzar i desplegar diferents microagents en paral·lel sense conflictes de codi i sense aturar l'ecosistema.
 
-
 ## 7. Arquitectura de Referència: El Motor de Licitacions (RFP Engine)
 
 Per demostrar la robustesa del Microagentic Stacking en un entorn crític, analitzem l'arquitectura lògica d'un sistema de Resposta Automàtica a Licitacions (RFPs). Aquest procés requereix una estricta separació entre el raonament (IA) i les dades de negoci (SQL). La indústria es mou cap a models on l'orquestració es gestiona mitjançant màquines d'estat explícites, no mitjançant bucles autònoms [9].
@@ -124,7 +117,6 @@ Per demostrar la robustesa del Microagentic Stacking en un entorn crític, anali
 * **Microagent B (Auditor de Risc):** Rep les clàusules legals. Si detecta riscos inacceptables, activa un "Tallacircuits" (Circuit Breaker) [5] i l'orquestrador atura el procés abans de la redacció.
 * **Microagent C (Redactor Final):** Només s'activa si els passos anteriors són vàlids. Genera la proposta utilitzant exclusivament les "dades netes" que l'orquestrador li proporciona.
 
-
 ## 8. Conclusió: L'Evolució com a Estàndard
 
 Microagentic Stacking no és una solució estàtica; és una metodologia per al creixement continu. Permet començar amb un MVP simple i evolucionar cap a ecosistemes complexos, afegint capacitats i optimitzant components individuals sense risc de regressió. La comunitat de desenvolupament en general està adoptant aquesta transició des de monòlits cap a fluxos de treball agèntics com el nou paradigma de migració de càrregues de treball [12].
@@ -135,7 +127,7 @@ Rebutgem el caos. Abracem l'estructura.
 **Autor Principal & Mantenidor:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Publicat:** Gener 2026
 Aquest és un estàndard viu. Les contribucions de la comunitat són benvingudes.
-
+Adopta aquest estàndard afegint la insígnia MAS-Ready al teu repositori.
 
 ## Referències
 

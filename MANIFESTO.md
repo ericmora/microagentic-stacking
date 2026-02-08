@@ -56,33 +56,9 @@ Agents are the pieces, but the value is in the assembly. Complex intelligence do
 * **Processes calling Processes:** A high-level process can invoke another process as if it were just another agent, allowing for infinite recursive composition.
 * **Human-in-the-Loop (HITL):** A human validator can act as a "Microagent" within the stack, fulfilling a contract where manual oversight is required.
 
-## 4. Architecture Reference: The RFP Engine
+### V. The Law of the Business Process Orchestration (BPO)
 
-```mermaid
-graph TD
-    subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
-        Start((Start RFP)) --> Step1[Call Agent A: Extractor]
-        Step1 --> Validation1{Contract Check}
-        Validation1 -->|Success| Legacy[Query ERP: Prices & Stock]
-        Validation1 -->|Fail| Error1[HALT: Contract Violation]
-        Legacy --> Step2[Call Agent B: Risk Auditor]
-        Step2 --> Validation2{Circuit Breaker?}
-        Validation2 -->|Risk High| Error2[HALT: Risk Detected]
-        Validation2 -->|Risk Low| Step3[Call Agent C: Final Drafter]
-        Step3 --> Final((Final Proposal))
-    end
-    subgraph Agents [ATOMIC MICROAGENTS]
-        AgentA[[Agent A: Extractor]]
-        AgentB[[Agent B: Auditor]]
-        AgentC[[Agent C: Drafter]]
-    end
-    Step1 -.-> AgentA
-    Step2 -.-> AgentB
-    Step3 -.-> AgentC
-    style Orchestrator fill:#f0f4f8,stroke:#2d3748
-    style Error1 fill:#feb2b2
-    style Error2 fill:#feb2b2
-```
+The orchestrator is the master of the process. It is the only component that knows the complete context of the operation. It is the only component that can make decisions based on the complete context of the operation.
 
 ## 4. The Enterprise Governance Agreement
 
@@ -94,7 +70,7 @@ AI autonomy within a company requires strict control. MAS is not just code; it i
 
 ### 2. Immutability and Versioning (Prompt SemVer)
 
-A prompt is code. It must be version-controlled. Any change to an internal instruction, however small, constitutes a new immutable version of the agent (v1.0 -> v1.1). There are no "hot" changes in production.
+A prompt is code. It must be version-controlled. Any change to an internal instruction, however small, constitutes a new immutable version of the agent (e.g., v1.0.0 for minor text tweaks, v2.0.0 for model switching or logic changes). There are no "hot" changes in production.
 
 ### 3. Strict Input Validation (Fail Fast)
 
@@ -134,6 +110,32 @@ We break the development bottleneck. Thanks to strict contracts and black boxes,
 
 ## 7. Reference Architecture: The RFP Engine
 
+```mermaid
+graph TD
+    subgraph Orchestrator [BUSINESS PROCESS ORCHESTRATOR]
+        Start((Start RFP)) --> Step1[Call Agent A: Extractor]
+        Step1 --> Validation1{Contract Check}
+        Validation1 -->|Success| Legacy[Query ERP: Prices & Stock]
+        Validation1 -->|Fail| Error1[HALT: Contract Violation]
+        Legacy --> Step2[Call Agent B: Risk Auditor]
+        Step2 --> Validation2{Circuit Breaker?}
+        Validation2 -->|Risk High| Error2[HALT: Risk Detected]
+        Validation2 -->|Risk Low| Step3[Call Agent C: Final Drafter]
+        Step3 --> Final((Final Proposal))
+    end
+    subgraph Agents [ATOMIC MICROAGENTS]
+        AgentA[[Agent A: Extractor]]
+        AgentB[[Agent B: Auditor]]
+        AgentC[[Agent C: Drafter]]
+    end
+    Step1 -.-> AgentA
+    Step2 -.-> AgentB
+    Step3 -.-> AgentC
+    style Orchestrator fill:#f0f4f8,stroke:#2d3748
+    style Error1 fill:#feb2b2
+    style Error2 fill:#feb2b2
+```
+
 To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops [9].
 
 ### The Microagentic Stack
@@ -154,6 +156,7 @@ We reject chaos. We embrace structure.
 **Lead Author & Maintainer:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Published:** January 2026
 This is a living standard. Community contributions are welcome.
+Adopt this standard by adding the MAS-Ready badge to your repo.
 
 ## References
 
