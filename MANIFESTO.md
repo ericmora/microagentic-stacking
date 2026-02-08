@@ -2,7 +2,6 @@
 
 ## From Prompt Alchemy to Scalable Software Engineering
 
----
 
 ## 1. Preamble: The End of the Monolith
 
@@ -16,7 +15,6 @@ We propose a radical paradigm shift: stop building monolithic chatbots and start
 
 We call this standard **Microagentic Stacking (MAS)**.
 
----
 
 ## 2. Core Philosophy
 
@@ -28,7 +26,6 @@ We are based on three non-negotiable pillars:
 2. **Atomicity Over Generality:** Cognitive complexity is solved by breaking it down into its smallest and indivisible components.
 3. **Incremental Growth:** Systems are not designed "finished"; they evolve layer by layer, process by process, from a simple MVP to a complex ecosystem.
 
----
 
 ## 3. The Technical Principles of MAS
 
@@ -61,7 +58,6 @@ Agents are the pieces, but the value is in the assembly. Complex intelligence do
 * **Processes calling Agents:** A workflow orchestrates a sequence of microagents.
 * **Processes calling Processes:** A high-level process can invoke another process as if it were just another agent, allowing for infinite recursive composition.
 
----
 
 ## 4. The Enterprise Governance Agreement
 
@@ -87,7 +83,6 @@ Information is governed by the "need to know" principle. No agent receives the g
 
 Cost must be observable per unit. The system must be able to report the exact execution cost of each individual microagent.
 
----
 
 ## 5. The Quality Framework (Testing Framework)
 
@@ -97,7 +92,6 @@ Since LLMs are probabilistic, testing in MAS must be statistical and multi-level
 * **Level 2: Contract Testing (Integration).** We validate that the pieces fit together using Mocking. We ensure that the orchestrator is correctly transforming data between agents without needing to execute the models.
 * **Level 3: Process Testing (E2E).** We validate that the complete business flow meets functional and latency requirements.
 
----
 
 ## 6. The Three Dimensions of Scalability
 
@@ -115,7 +109,6 @@ We avoid the cognitive deterioration of long contexts [6]. To solve more complex
 
 We break the development bottleneck. Thanks to strict contracts and black boxes, multiple teams can work, optimize, and deploy different microagents in parallel without code conflicts and without stopping the ecosystem.
 
----
 
 ## 7. Reference Architecture: The RFP Engine
 
@@ -129,7 +122,6 @@ To demonstrate the robustness of Microagentic Stacking in a critical environment
 * **Microagent B (Risk Auditor):** Receives legal clauses. If it detects unacceptable risks, it activates a "Circuit Breaker" [5] and the orchestrator stops the process before drafting.
 * **Microagent C (Final Drafter):** Only activates if previous steps are valid. Generates the proposal using exclusively the "clean data" the orchestrator provides.
 
----
 
 ## 8. Conclusion: Evolution as Standard
 
@@ -142,7 +134,6 @@ We reject chaos. We embrace structure.
 **Published:** January 2026
 This is a living standard. Community contributions are welcome.
 
----
 
 ## References
 

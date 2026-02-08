@@ -4,7 +4,6 @@
 
 ## Von Prompt-Alchemie zu skalierbarem Software-Engineering
 
----
 
 ## 1. Präambel: Das Ende des Monolithen
 
@@ -18,7 +17,6 @@ Wir schlagen einen radikalen Paradigmenwechsel vor: Hören Sie auf, monolithisch
 
 Wir nennen diesen Standard **Microagentic Stacking (MAS)**.
 
----
 
 ## 2. Kernphilosophie
 
@@ -30,7 +28,6 @@ Wir basieren auf drei nicht verhandelbaren Säulen:
 2. **Atomarität über Allgemeinheit:** Kognitive Komplexität wird gelöst, indem sie in ihre kleinsten und unteilbaren Komponenten zerlegt wird.
 3. **Inkrementelles Wachstum:** Systeme werden nicht „fertig“ entworfen; sie entwickeln sich Schicht für Schicht, Prozess für Prozess, von einem einfachen MVP zu einem komplexen Ökosystem.
 
----
 
 ## 3. Die technischen Prinzipien von MAS
 
@@ -63,7 +60,6 @@ Agenten sind die Teile, aber der Wert liegt in der Montage. Komplexe Intelligenz
 * **Prozesse, die Agenten aufrufen:** Ein Workflow orchestriert eine Sequenz von Mikroagenten.
 * **Prozesse, die Prozesse aufrufen:** Ein High-Level-Prozess kann einen anderen Prozess aufrufen, als wäre er nur ein weiterer Agent, was eine unendliche rekursive Komposition ermöglicht.
 
----
 
 ## 4. Die Enterprise-Governance-Vereinbarung
 
@@ -87,7 +83,6 @@ Informationen unterliegen dem Prinzip „Need to know“. Kein Agent erhält den
 
 Kosten müssen pro Einheit beobachtbar sein. Das System muss in der Lage sein, die genauen Ausführungskosten jedes einzelnen Mikroagenten zu melden.
 
----
 
 ## 5. Das Qualitätsrahmenwerk (Testing Framework)
 
@@ -97,7 +92,6 @@ Da LLMs probabilistisch sind, muss das Testen in MAS statistisch und mehrstufig 
 * **Level 2: Vertragstests (Integration).** Wir validieren, dass die Teile mittels Mocking zusammenpassen. Wir stellen sicher, dass der Orchestrator Daten korrekt zwischen Agenten transformiert, ohne die Modelle ausführen zu müssen.
 * **Level 3: Prozesstests (E2E).** Wir validieren, dass der komplette Geschäftsablauf funktionale und Latenzanforderungen erfüllt.
 
----
 
 ## 6. Die drei Dimensionen der Skalierbarkeit
 
@@ -115,7 +109,6 @@ Wir vermeiden die kognitive Verschlechterung langer Kontexte [6]. Um komplexere 
 
 Wir brechen den Entwicklungsflaschenhals. Dank strikter Verträge und Black Boxes können mehrere Teams parallel an verschiedenen Mikroagenten arbeiten, diese optimieren und bereitstellen, ohne Codekonflikte und ohne das Ökosystem zu stoppen.
 
----
 
 ## 7. Referenzarchitektur: Die RFP-Engine
 
@@ -129,7 +122,6 @@ Um die Robustheit von Microagentic Stacking in einer kritischen Umgebung zu demo
 * **Mikroagent B (Risikoauditor):** Empfängt Rechtsklauseln. Wenn er inakzeptable Risiken erkennt, aktiviert er einen „Schutzschalter“ (Circuit Breaker) [5] und der Orchestrator stoppt den Prozess vor dem Entwurf.
 * **Mikroagent C (Finaler Verfasser):** Wird nur aktiviert, wenn vorherige Schritte gültig sind. Generiert den Vorschlag ausschließlich unter Verwendung der „sauberen Daten“, die der Orchestrator bereitstellt.
 
----
 
 ## 8. Fazit: Evolution als Standard
 
@@ -142,7 +134,6 @@ Wir lehnen Chaos ab. Wir begrüßen Struktur.
 **Veröffentlicht:** Januar 2026
 Dies ist ein lebendiger Standard. Beiträge der Community sind willkommen.
 
----
 
 ## Referenzen
 

@@ -4,7 +4,6 @@
 
 ## De l'Alchimie des Prompts à l'Ingénierie Logicielle Évolutive
 
----
 
 ## 1. Préambule : La Fin du Monolithe
 
@@ -18,7 +17,6 @@ Nous proposons un changement de paradigme radical : cesser de construire des cha
 
 Nous appelons ce standard **Microagentic Stacking (MAS)**.
 
----
 
 ## 2. Philosophie Centrale
 
@@ -30,7 +28,6 @@ Nous nous basons sur trois piliers non négociables :
 2. **Atomicité sur Généralité :** La complexité cognitive est résolue en la divisant en ses plus petits composants indivisibles.
 3. **Croissance Incrémentale :** Les systèmes ne sont pas conçus "finis" ; ils évoluent couche par couche, processus par processus, d'un MVP simple à un écosystème complexe.
 
----
 
 ## 3. Les Principes Techniques du MAS
 
@@ -63,7 +60,6 @@ Les agents sont les pièces, mais la valeur est dans l'assemblage. L'intelligenc
 * **Processus appelant des Agents :** Un flux de travail orchestre une séquence de microagents.
 * **Processus appelant des Processus :** Un processus de haut niveau peut invoquer un autre processus comme s'il s'agissait d'un simple agent, permettant une composition récursive infinie.
 
----
 
 ## 4. L'Accord de Gouvernance d'Entreprise
 
@@ -89,7 +85,6 @@ L'information est régie par le principe du "besoin de savoir". Aucun agent ne r
 
 Le coût doit être observable par unité. Le système doit être capable de rapporter le coût exact d'exécution de chaque microagent individuel.
 
----
 
 ## 5. Le Cadre de Qualité (Testing Framework)
 
@@ -99,7 +94,6 @@ Comme les LLMs sont probabilistes, les tests en MAS doivent être statistiques e
 * **Niveau 2 : Test de Contrat (Integration).** Nous validons que les pièces s'emboîtent via le Mocking. Nous assurons que l'orchestrateur transforme correctement les données entre agents sans avoir besoin d'exécuter les modèles.
 * **Niveau 3 : Test de Processus (E2E).** Nous validons que le flux métier complet répond aux exigences fonctionnelles et de latence.
 
----
 
 ## 6. Les Trois Dimensions de l'Évolutivité
 
@@ -117,7 +111,6 @@ Nous évitons la détérioration cognitive des contextes longs [6]. Pour résoud
 
 Nous brisons le goulot d'étranglement du développement. Grâce aux contrats stricts et aux boîtes noires, plusieurs équipes peuvent travailler, optimiser et déployer différents microagents en parallèle sans conflits de code et sans arrêter l'écosystème.
 
----
 
 ## 7. Architecture de Référence : Le Moteur d'Appels d'Offres (RFP Engine)
 
@@ -131,7 +124,6 @@ Pour démontrer la robustesse du Microagentic Stacking dans un environnement cri
 * **Microagent B (Auditeur de Risque) :** Reçoit les clauses légales. S'il détecte des risques inacceptables, il active un "Coupe-Circuit" (Circuit Breaker) [5] et l'orchestrateur arrête le processus avant la rédaction.
 * **Microagent C (Rédacteur Final) :** Ne s'active que si les étapes précédentes sont valides. Génère la proposition en utilisant exclusivement les "données propres" que l'orchestrateur lui fournit.
 
----
 
 ## 8. Conclusion : L'Évolution comme Standard
 
@@ -144,7 +136,6 @@ Nous rejetons le chaos. Nous embrassons la structure.
 **Publié :** Janvier 2026
 Ceci est un standard vivant. Les contributions de la communauté sont les bienvenues.
 
----
 
 ## Références
 

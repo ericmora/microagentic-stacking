@@ -28,7 +28,6 @@ If you have built a tool that facilitates MAS implementation or written an artic
 
 - Add it to the **[Awesome MAS List](./AWESOME.md)** via a PR.
 
----
 
 ## Contribution Process
 
@@ -41,7 +40,6 @@ If you have built a tool that facilitates MAS implementation or written an artic
 
 We value rigorous technical debate that is constructive and respectful. Our common goal is to elevate AI engineering to a serious professional discipline.
 
----
 
 **By contributing, you agree that your contributions will be licensed under the same [CC BY 4.0](./LICENSE.md) license as the rest of the project.**
 

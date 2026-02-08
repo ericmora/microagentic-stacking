@@ -4,7 +4,6 @@
 
 ## De la Alquimia de los Prompts a la Ingeniería de Software Escalable
 
----
 
 ## 1. Preámbulo: El Fin del Monolito
 
@@ -18,7 +17,6 @@ Proponemos un cambio de paradigma radical: dejar de construir chatbots monolíti
 
 A este estándar lo llamamos **Microagentic Stacking (MAS)**.
 
----
 
 ## 2. Filosofía Central
 
@@ -30,7 +28,6 @@ Nos basamos en tres pilares innegociables:
 2. **Atomicidad sobre Generalidad:** La complejidad cognitiva se resuelve dividiéndola en sus componentes más pequeños e indivisibles.
 3. **Crecimiento Incremental:** Los sistemas no se diseñan "finalizados"; evolucionan capa a capa, proceso a proceso, desde un MVP simple hasta un ecosistema complejo.
 
----
 
 ## 3. Los Principios Técnicos del MAS
 
@@ -63,7 +60,6 @@ Los agentes son las piezas, pero el valor está en el ensamblaje. La inteligenci
 * **Procesos que llaman a Agentes:** Un flujo de trabajo orquesta una secuencia de microagentes.
 * **Procesos que llaman a Procesos:** Un proceso de alto nivel puede invocar a otro proceso como si fuera un agente más, permitiendo una composición recursiva infinita.
 
----
 
 ## 4. El Acuerdo de Gobernanza Empresarial
 
@@ -89,7 +85,6 @@ La información se rige por el principio de "necesidad de saber". Ningún agente
 
 El coste debe ser observable por unidad. El sistema debe ser capaz de reportar el coste exacto de ejecución de cada microagente individual.
 
----
 
 ## 5. El Marco de Calidad (Testing Framework)
 
@@ -99,7 +94,6 @@ Dado que los LLMs son probabilísticos, el testing en MAS debe ser estadístico 
 * **Nivel 2: Testing de Contrato (Integration).** Validamos que las piezas encajen mediante Mocking. Aseguramos que el orquestador está transformando correctamente los datos entre agentes sin necesidad de ejecutar los modelos.
 * **Nivel 3: Testing de Proceso (E2E).** Validamos que el flujo de negocio completo cumple con los requisitos funcionales y de latencia.
 
----
 
 ## 6. Las Tres Dimensiones de la Escalabilidad
 
@@ -117,7 +111,6 @@ Evitamos el deterioro cognitivo de los contextos largos [6]. Para resolver probl
 
 Rompemos el cuello de botella del desarrollo. Gracias a los contratos estrictos y cajas negras, múltiples equipos pueden trabajar, optimizar y desplegar diferentes microagentes en paralelo sin conflictos de código y sin detener el ecosistema.
 
----
 
 ## 7. Arquitectura de Referencia: El Motor de Licitaciones (RFP Engine)
 
@@ -131,7 +124,6 @@ Para demostrar la robustez del Microagentic Stacking en un entorno crítico, ana
 * **Microagente B (Auditor de Riesgo):** Recibe las cláusulas legales. Si detecta riesgos inaceptables, activa un "Cortocircuito" (Circuit Breaker) [5] y el orquestador detiene el proceso antes de la redacción.
 * **Microagente C (Redactor Final):** Solo se activa si los pasos anteriores son válidos. Genera la propuesta utilizando exclusivamente los "datos limpios" que el orquestador le proporciona.
 
----
 
 ## 8. Conclusión: La Evolución como Estándar
 
@@ -144,7 +136,6 @@ Rechazamos el caos. Abrazamos la estructura.
 **Publicado:** Enero 2026
 Este es un estándar vivo. Las contribuciones de la comunidad son bienvenidas.
 
----
 
 ## Referencias
 

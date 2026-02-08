@@ -4,7 +4,6 @@
 
 ## De l'Alquímia dels Prompts a l'Enginyeria de Software Escalable
 
----
 
 ## 1. Preàmbul: La Fi del Monòlit
 
@@ -18,7 +17,6 @@ Proposem un canvi de paradigma radical: deixar de construir chatbots monolítics
 
 A aquest estàndard l'anomenem **Microagentic Stacking (MAS)**.
 
----
 
 ## 2. Filosofia Central
 
@@ -30,7 +28,6 @@ Ens basem en tres pilars innegociables:
 2. **Atomicitat sobre Generalitat:** La complexitat cognitiva es resol dividint-la en els seus components més petits i indivisibles.
 3. **Creixement Incremental:** Els sistemes no es dissenyen "finalitzats"; evolucionen capa a capa, procés a procés, des d'un MVP simple fins a un ecosistema complex.
 
----
 
 ## 3. Els Principis Tècnics del MAS
 
@@ -63,7 +60,6 @@ Els agents són les peces, però el valor està en l'assemblatge. La intel·lig�
 * **Processos que criden Agents:** Un flux de treball orquestra una seqüència de microagents.
 * **Processos que criden Processos:** Un procés d'alt nivell pot invocar un altre procés com si fos un agent més, permetent una composició recursiva infinita.
 
----
 
 ## 4. L'Acord de Governança Empresarial
 
@@ -89,7 +85,6 @@ La informació es regeix pel principi de "necessitat de saber". Cap agent rep el
 
 El cost ha de ser observable per unitat. El sistema ha de ser capaç de reportar el cost exacte d'execució de cada microagent individual.
 
----
 
 ## 5. El Marc de Qualitat (Testing Framework)
 
@@ -99,7 +94,6 @@ Atès que els LLMs són probabilístics, el testing en MAS ha de ser estadístic
 * **Nivell 2: Testing de Contracte (Integration).** Validem que les peces encaixin mitjançant Mocking. Assegurem que l'orquestrador està transformant correctament les dades entre agents sense necessitat d'executar els models.
 * **Nivell 3: Testing de Procés (E2E).** Validem que el flux de negoci complet compleix amb els requisits funcionals i de latència.
 
----
 
 ## 6. Les Tres Dimensions de l'Escalabilitat
 
@@ -117,7 +111,6 @@ Evitem el deteriorament cognitiu dels contextos llargs [6]. Per resoldre problem
 
 Trenquem el coll d'ampolla del desenvolupament. Gràcies als contractes estrictes i caixes negres, múltiples equips poden treballar, optimitzar i desplegar diferents microagents en paral·lel sense conflictes de codi i sense aturar l'ecosistema.
 
----
 
 ## 7. Arquitectura de Referència: El Motor de Licitacions (RFP Engine)
 
@@ -131,7 +124,6 @@ Per demostrar la robustesa del Microagentic Stacking en un entorn crític, anali
 * **Microagent B (Auditor de Risc):** Rep les clàusules legals. Si detecta riscos inacceptables, activa un "Tallacircuits" (Circuit Breaker) [5] i l'orquestrador atura el procés abans de la redacció.
 * **Microagent C (Redactor Final):** Només s'activa si els passos anteriors són vàlids. Genera la proposta utilitzant exclusivament les "dades netes" que l'orquestrador li proporciona.
 
----
 
 ## 8. Conclusió: L'Evolució com a Estàndard
 
@@ -144,7 +136,6 @@ Rebutgem el caos. Abracem l'estructura.
 **Publicat:** Gener 2026
 Aquest és un estàndard viu. Les contribucions de la comunitat són benvingudes.
 
----
 
 ## Referències
 
