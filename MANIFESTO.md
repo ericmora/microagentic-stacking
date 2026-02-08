@@ -2,7 +2,6 @@
 
 ## From Prompt Alchemy to Scalable Software Engineering
 
-
 ## 1. Preamble: The End of the Monolith
 
 We are witnessing the collapse of "Prompt Engineering" as an isolated discipline. The attempt to solve complex business processes through a single giant instruction to a foundational model (LLM) has proven to be a fragile, unpredictable strategy, and impossible to audit at enterprise scale.
@@ -15,7 +14,6 @@ We propose a radical paradigm shift: stop building monolithic chatbots and start
 
 We call this standard **Microagentic Stacking (MAS)**.
 
-
 ## 2. Core Philosophy
 
 Our methodology does not seek to create Artificial General Intelligence (AGI). It seeks to build robust enterprise systems through the orchestration of specialized cognitive units.
@@ -25,7 +23,6 @@ We are based on three non-negotiable pillars:
 1. **Process Over AI:** The AI does not define the workflow; the business process defines where and how AI is used.
 2. **Atomicity Over Generality:** Cognitive complexity is solved by breaking it down into its smallest and indivisible components.
 3. **Incremental Growth:** Systems are not designed "finished"; they evolve layer by layer, process by process, from a simple MVP to a complex ecosystem.
-
 
 ## 3. The Technical Principles of MAS
 
@@ -58,7 +55,6 @@ Agents are the pieces, but the value is in the assembly. Complex intelligence do
 * **Processes calling Agents:** A workflow orchestrates a sequence of microagents.
 * **Processes calling Processes:** A high-level process can invoke another process as if it were just another agent, allowing for infinite recursive composition.
 
-
 ## 4. The Enterprise Governance Agreement
 
 AI autonomy within a company requires strict control. MAS is not just code; it is a framework of responsibility and robustness. ML engineering experts have repeatedly pointed out that the gap between a demo and a system in production lies in the lack of engineering rigor, evaluation, and risk control [14]. Evidence shows that robustness decreases drastically as uncontrolled autonomy increases [8].
@@ -83,7 +79,6 @@ Information is governed by the "need to know" principle. No agent receives the g
 
 Cost must be observable per unit. The system must be able to report the exact execution cost of each individual microagent.
 
-
 ## 5. The Quality Framework (Testing Framework)
 
 Since LLMs are probabilistic, testing in MAS must be statistical and multi-level.
@@ -91,7 +86,6 @@ Since LLMs are probabilistic, testing in MAS must be statistical and multi-level
 * **Level 1: Unit Evals.** Each Microagent must pass a "Golden Dataset" with a defined statistical success threshold (>95%) before being deployed.
 * **Level 2: Contract Testing (Integration).** We validate that the pieces fit together using Mocking. We ensure that the orchestrator is correctly transforming data between agents without needing to execute the models.
 * **Level 3: Process Testing (E2E).** We validate that the complete business flow meets functional and latency requirements.
-
 
 ## 6. The Three Dimensions of Scalability
 
@@ -109,7 +103,6 @@ We avoid the cognitive deterioration of long contexts [6]. To solve more complex
 
 We break the development bottleneck. Thanks to strict contracts and black boxes, multiple teams can work, optimize, and deploy different microagents in parallel without code conflicts and without stopping the ecosystem.
 
-
 ## 7. Reference Architecture: The RFP Engine
 
 To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops [9].
@@ -122,7 +115,6 @@ To demonstrate the robustness of Microagentic Stacking in a critical environment
 * **Microagent B (Risk Auditor):** Receives legal clauses. If it detects unacceptable risks, it activates a "Circuit Breaker" [5] and the orchestrator stops the process before drafting.
 * **Microagent C (Final Drafter):** Only activates if previous steps are valid. Generates the proposal using exclusively the "clean data" the orchestrator provides.
 
-
 ## 8. Conclusion: Evolution as Standard
 
 Microagentic Stacking is not a static solution; it is a methodology for continuous growth. It allows starting with a simple MVP and evolving into complex ecosystems, adding capabilities and optimizing individual components without risk of regression. The development community at large is adopting this transition from monoliths to agentic workflows as the new paradigm of workload migration [12].
@@ -133,7 +125,6 @@ We reject chaos. We embrace structure.
 **Lead Author & Maintainer:** Eric Mora Juan (<ericmora82@gmail.com>)
 **Published:** January 2026
 This is a living standard. Community contributions are welcome.
-
 
 ## References
 
