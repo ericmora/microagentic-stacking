@@ -6,13 +6,11 @@ The era of the "Monolithic Prompt" is over. As AI systems move into mission-crit
 
 **Microagentic Stacking (MAS)** is a framework and philosophy for orchestrating specialized, atomic, and decoupled cognitive units to solve complex business processes.
 
-
 ## 📑 Core Pillars
 
 * **Process Over AI:** The business logic defines the flow; AI is simply a component.
 * **Atomicity Over Generality:** Solve complexity by breaking it into the smallest possible cognitive units.
 * **Incremental Growth:** Systems evolve layer by layer, from a simple MVP to a complex ecosystem.
-
 
 ## 🛠 Technical Principles (The MAS Laws)
 
@@ -21,11 +19,9 @@ The era of the "Monolithic Prompt" is over. As AI systems move into mission-crit
 3. **Strict Design by Contract:** Rigid Input/Output schemas (JSON/Pydantic) are mandatory.
 4. **Hierarchical Orchestration:** Complex intelligence emerges from the assembly, not the individual model.
 
-
 ## ⚖️ Governance & Robustness
 
 MAS introduces **Prompt SemVer**, **Atomic Accountability** (cryptographic metadata for every output), and **Fail-Fast validation**. We don't build demos; we build architecture.
-
 
 ## 📖 Read the Full Manifesto
 
@@ -47,20 +43,11 @@ The complete document, including technical references and the **RFP Engine Refer
 * [🇵🇹 Português](./translations/manifesto-pt.md)
 * [🇷🇺 Русский](./translations/manifesto-ru.md)
 
-
-## 🛠️ Awesome MAS Tools
-
-Looking for frameworks that comply with MAS principles? Check out our curated list:
-
-👉 **[Awesome Microagentic Stacking](./AWESOME.md)**
-
-
 ## 🤝 Contributing
 
 This is a living standard. We welcome contributions from the AI engineering community.
 
 👉 **Please read our [Contribution Guidelines](./CONTRIBUTING.md) before submitting a Pull Request.**
-
 
 ## 📄 License
 
