@@ -6,9 +6,9 @@
 
 We are witnessing the collapse of "Prompt Engineering" as an isolated discipline. The attempt to solve complex business processes through a single giant instruction to a foundational model (LLM) has proven to be a fragile, unpredictable strategy, and impossible to audit at enterprise scale.
 
-Academic research confirmed as early as 2023 that treating LLMs as monolithic black boxes for complex tasks was a dead end [7]. Today, leading institutions like UC Berkeley ratify that the state of the art is no longer achieved with larger individual models, but with **"Compound AI Systems"** that orchestrate multiple components [13], a trend validated by emerging architectural patterns observed in the industry by leading firms like a16z [15].
+Academic research confirmed as early as 2023 that treating LLMs as monolithic black boxes for complex tasks was a dead end . Today, leading institutions like UC Berkeley ratify that the state of the art is no longer achieved with larger individual models, but with **"Compound AI Systems"** that orchestrate multiple components , a trend validated by emerging architectural patterns observed in the industry by leading firms like a16z .
 
-AI is not magic; it is probabilistic computation. As such, it must undergo the same engineering disciplines that have allowed software to scale for decades: **decoupling, modularity, and strict contracts.** The future of AI lies not in larger prompts, but in better system architecture [10].
+AI is not magic; it is probabilistic computation. As such, it must undergo the same engineering disciplines that have allowed software to scale for decades: **decoupling, modularity, and strict contracts.** The future of AI lies not in larger prompts, but in better system architecture .
 
 We propose a radical paradigm shift: stop building monolithic chatbots and start orchestrating compound architectures.
 
@@ -30,11 +30,11 @@ To implement a MAS system, the following architectural laws must be obeyed, inhe
 
 ### I. The Law of the Atomic Microagent (Single Responsibility)
 
-A Microagent must execute a single cognitive task and execute it perfectly. This is the direct application of the Single Responsibility Principle (SRP) to AI components [2]. If an agent tries to "search for information, analyze it, and write a response", it is poorly designed. It must be divided into three distinct agents.
+A Microagent must execute a single cognitive task and execute it perfectly. This is the direct application of the Single Responsibility Principle (SRP) to AI components . If an agent tries to "search for information, analyze it, and write a response", it is poorly designed. It must be divided into three distinct agents.
 
 ### II. Black Box Isolation (The Black Box Principle)
 
-The internal working of a Microagent is absolutely private and inaccessible to the rest of the system, following microservices design principles and bounded contexts [1].
+The internal working of a Microagent is absolutely private and inaccessible to the rest of the system, following microservices design principles and bounded contexts .
 
 * The orchestrator does not know what prompt is used internally.
 * The orchestrator does not know what model (GPT-4, Claude, local Llama 3) executes the task.
@@ -43,14 +43,14 @@ This abstraction allows for refactoring, cost optimization, and changing models 
 
 ### III. Radical Decoupling and Contracts (Decoupling via Schema)
 
-Microagents are agnostic to each other. They are governed by the "Design by Contract" methodology, where preconditions and postconditions are strict [3].
+Microagents are agnostic to each other. They are governed by the "Design by Contract" methodology, where preconditions and postconditions are strict .
 
 * **Rigid Contracts:** Each agent strictly defines what data it accepts (Input Schema) and what data it returns (Output Schema) using standard formats (e.g., JSON Schema, Pydantic).
 * **The Orchestrator as Transformer:** It is the exclusive responsibility of the Business Process (the orchestrator) to take the output from Agent A, transform or map the data if necessary, and inject it into Agent B fulfilling its contract.
 
 ### IV. Hierarchical and Composable Orchestration
 
-Agents are the pieces, but the value is in the assembly. Complex intelligence does not emerge from a single model, but from the coordination of multiple parts [4].
+Agents are the pieces, but the value is in the assembly. Complex intelligence does not emerge from a single model, but from the coordination of multiple parts .
 
 * **Processes calling Agents:** A workflow orchestrates a sequence of microagents.
 * **Processes calling Processes:** A high-level process can invoke another process as if it were just another agent, allowing for infinite recursive composition.
@@ -62,7 +62,7 @@ The orchestrator is the master of the process. It is the only component that kno
 
 ## 4. The Enterprise Governance Agreement
 
-AI autonomy within a company requires strict control. MAS is not just code; it is a framework of responsibility and robustness. ML engineering experts have repeatedly pointed out that the gap between a demo and a system in production lies in the lack of engineering rigor, evaluation, and risk control [14]. Evidence shows that robustness decreases drastically as uncontrolled autonomy increases [8].
+AI autonomy within a company requires strict control. MAS is not just code; it is a framework of responsibility and robustness. ML engineering experts have repeatedly pointed out that the gap between a demo and a system in production lies in the lack of engineering rigor, evaluation, and risk control . Evidence shows that robustness decreases drastically as uncontrolled autonomy increases .
 
 ### 1. Atomic Accountability
 
@@ -74,11 +74,11 @@ A prompt is code. It must be version-controlled. Any change to an internal instr
 
 ### 3. Strict Input Validation (Fail Fast)
 
-We act as strict customs control. Before an agent starts working, the system automatically verifies that the data it is about to receive complies exactly with its input contract. If the data does not fit 100%, the process stops immediately with a visible error. This "Fail Fast" pattern is essential for distributed system stability [5].
+We act as strict customs control. Before an agent starts working, the system automatically verifies that the data it is about to receive complies exactly with its input contract. If the data does not fit 100%, the process stops immediately with a visible error. This "Fail Fast" pattern is essential for distributed system stability .
 
 ### 4. Minimum Contextual Privilege
 
-Information is governed by the "need to know" principle. No agent receives the global context of the operation, only the data strictly necessary for its micro-task. This is critical, as it has been shown that LLM performance degrades significantly when flooded with irrelevant context ("Lost in the Middle phenomenon") [6].
+Information is governed by the "need to know" principle. No agent receives the global context of the operation, only the data strictly necessary for its micro-task. This is critical, as it has been shown that LLM performance degrades significantly when flooded with irrelevant context ("Lost in the Middle phenomenon") .
 
 ### 5. Unit Economics (FinOps at the Atomic Level)
 
@@ -102,7 +102,7 @@ Our microagents are stateless execution units. This allows deploying from simple
 
 ### II. Cognitive Scalability: "Divide and Conquer"
 
-We avoid the cognitive deterioration of long contexts [6]. To solve more complex problems, we do not expand the context; we add more specialized agents to the chain. We maintain constant reliability regardless of problem complexity.
+We avoid the cognitive deterioration of long contexts . To solve more complex problems, we do not expand the context; we add more specialized agents to the chain. We maintain constant reliability regardless of problem complexity.
 
 ### III. Organizational Scalability: Modular Development
 
@@ -110,7 +110,7 @@ We break the development bottleneck. Thanks to strict contracts and black boxes,
 
 ## 7. Reference Architecture: The RFP Engine
 
-To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops [9].
+To demonstrate the robustness of Microagentic Stacking in a critical environment, we analyze the logical architecture of an Automated Request for Proposal (RFP) Response system. This process requires a strict separation between reasoning (AI) and business data (SQL). The industry is moving towards models where orchestration is managed by explicit state machines, not autonomous loops .
 
 ```mermaid
 graph TD
@@ -143,12 +143,12 @@ graph TD
 * **Orchestrator (State Machine):** The core of the system. It is not AI. It is a workflow engine that manages the tender state and directs traffic between agents and databases.
 * **Microagent A (Extractor):** Receives raw text from the PDF. Its only mission is to return a structured JSON of technical requirements. It does not opine, only extracts.
 * **Integration Layer (Legacy):** The Orchestrator takes the IDs extracted by Agent A and queries the ERP to obtain prices and stock. Key Principle: AI never invents prices.
-* **Microagent B (Risk Auditor):** Receives legal clauses. If it detects unacceptable risks, it activates a "Circuit Breaker" [5] and the orchestrator stops the process before drafting.
+* **Microagent B (Risk Auditor):** Receives legal clauses. If it detects unacceptable risks, it activates a "Circuit Breaker"  and the orchestrator stops the process before drafting.
 * **Microagent C (Final Drafter):** Only activates if previous steps are valid. Generates the proposal using exclusively the "clean data" the orchestrator provides.
 
 ## 8. Conclusion: Evolution as Standard
 
-Microagentic Stacking is not a static solution; it is a methodology for continuous growth. It allows starting with a simple MVP and evolving into complex ecosystems, adding capabilities and optimizing individual components without risk of regression. The development community at large is adopting this transition from monoliths to agentic workflows as the new paradigm of workload migration [12].
+Microagentic Stacking is not a static solution; it is a methodology for continuous growth. It allows starting with a simple MVP and evolving into complex ecosystems, adding capabilities and optimizing individual components without risk of regression. The development community at large is adopting this transition from monoliths to agentic workflows as the new paradigm of workload migration .
 
 We reject chaos. We embrace structure.
 **We don't build demos. We build architecture.**
