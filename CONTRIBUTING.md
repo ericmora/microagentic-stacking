@@ -22,13 +22,6 @@ The "RFP Engine" (Point 7) is just the beginning. We want to document more real-
 - Describe an agentic workflow that follows MAS principles.
 - Diagrams (Mermaid or images) and pseudocode for contracts (Pydantic/JSON Schema) are highly encouraged in the `/examples` folder.
 
-## 4. Evangelism & Tooling 📣
-
-If you have built a tool that facilitates MAS implementation or written an article about it:
-
-- Add it to the **[Awesome MAS List](./AWESOME.md)** via a PR.
-
-
 ## Contribution Process
 
 1. **Fork** the repository.
@@ -39,7 +32,6 @@ If you have built a tool that facilitates MAS implementation or written an artic
 ## Code of Conduct
 
 We value rigorous technical debate that is constructive and respectful. Our common goal is to elevate AI engineering to a serious professional discipline.
-
 
 **By contributing, you agree that your contributions will be licensed under the same [CC BY 4.0](./LICENSE.md) license as the rest of the project.**
 
